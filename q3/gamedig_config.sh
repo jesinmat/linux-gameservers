@@ -1,0 +1,4 @@
+#!/bin/bash
+GAMEDIG_TYPE="quake3"
+GAMEDIG_ADDRESS="$IP"
+GAMEDIG_PORT="27960"
