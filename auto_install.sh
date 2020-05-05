@@ -1,14 +1,19 @@
 #!/bin/bash
 
-GAMEUSER="${GAME}user"
-GAMESERVER="${GAME}server"
-export GAMEUSER
-export GAMESERVER
-
 function fail {
     printf '%s\n' "$1" >&2
     exit 1
 }
+
+if [ "$#" -lt 1 ]; then
+    fail "Usage: $0 game_code"
+fi
+
+GAME="$1"
+GAMEUSER="gameuser"
+GAMESERVER="${GAME}server"
+export GAMEUSER
+export GAMESERVER
 
 function run_game_script {
     local SCRIPT="games/$GAME/$1"
@@ -34,21 +39,21 @@ function install_gamedig {
 
 [ -d "games/$GAME" ] || fail "This game is not supported!"
 
+# Install game dependencies
 run_game_script "install_dependencies.sh"
 
-# useradd -m -s /bin/bash "$GAMEUSER"
-# # Generate random password
-# PASS="$GAMEUSER"
-# echo "$GAMEUSER:$PASS" | chpasswd
-
+# Download LinuxGSM and game server files
 runuser -l "$GAMEUSER" -c 'wget -O linuxgsm.sh https://linuxgsm.sh'
 runuser -l "$GAMEUSER" -c 'chmod +x linuxgsm.sh'
 runuser -l "$GAMEUSER" -c 'bash linuxgsm.sh '"$GAMESERVER"''
 
 [ -n "$STEAM_ACC_REQUIRED" ] && set_steam_credentials
 
+# Install game server
 runuser -l $GAMEUSER -c './'"$GAMESERVER"' auto-install'
 
+# Apply default config, if needed
 run_game_script "initial_config.sh"
 
+# Install Gamedig for supported games
 [ -f "games/$GAME/gamedig_config.sh" ] && install_gamedig
