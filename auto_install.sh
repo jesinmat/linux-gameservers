@@ -50,10 +50,11 @@ runuser -l "$GAMEUSER" -c 'bash linuxgsm.sh '"$GAMESERVER"''
 [ -n "$STEAM_ACC_REQUIRED" ] && set_steam_credentials
 
 # Install game server
-runuser -l $GAMEUSER -c './'"$GAMESERVER"' auto-install'
+runuser -l "$GAMEUSER" -c './'"$GAMESERVER"' auto-install'
 
 # Apply default config, if needed
 run_game_script "initial_config.sh"
 
 # Install Gamedig for supported games
-[ -f "games/$GAME/gamedig_config.sh" ] && install_gamedig
+. "games/$GAME/game_properties.sh"
+[ -n "$GAMEDIG_TYPE" ] && install_gamedig
