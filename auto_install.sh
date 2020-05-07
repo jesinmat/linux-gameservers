@@ -29,15 +29,25 @@ function set_steam_credentials {
 }
 
 function install_gamedig {
-    curl -sL https://deb.nodesource.com/setup_14.x | bash -
-    apt install -y nodejs
+    if ! dpkg -s nodejs > /dev/null 2>&1; then
+        curl -sL https://deb.nodesource.com/setup_14.x | bash -
+        apt install -y nodejs
+    fi
     npm install gamedig -g
     runuser -l "$GAMEUSER" -c 'mkdir gamedig'
     cp "games/$GAME/gamedig_config.sh" "/home/$GAMEUSER/gamedig/"
     chown $GAMEUSER:$GAMEUSER "/home/$GAMEUSER/gamedig/gamedig_config.sh"
 }
 
+function install_common_dependencies {
+    apt update
+    apt install mailutils postfix curl wget file tar bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux
+}
+
 [ -d "games/$GAME" ] || fail "This game is not supported!"
+
+# Install common dependencies
+install_common_dependencies
 
 # Install game dependencies
 run_game_script "install_dependencies.sh"
