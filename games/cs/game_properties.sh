@@ -1,0 +1,6 @@
+GAME="cs"
+GAME_LONG_NAME="Counter-Strike 1.6"
+
+# Gamedig
+GAMEDIG_TYPE="cs16"
+GAMEDIG_PORT="27015"

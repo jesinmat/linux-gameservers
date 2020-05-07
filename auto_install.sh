@@ -34,9 +34,6 @@ function install_gamedig {
         apt install -y nodejs
     fi
     npm install gamedig -g
-    runuser -l "$GAMEUSER" -c 'mkdir gamedig'
-    cp "games/$GAME/gamedig_config.sh" "/home/$GAMEUSER/gamedig/"
-    chown $GAMEUSER:$GAMEUSER "/home/$GAMEUSER/gamedig/gamedig_config.sh"
 }
 
 function install_common_dependencies {
