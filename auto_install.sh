@@ -20,7 +20,7 @@ function usage {
 
 function install_common_dependencies {
     apt update
-    apt install mailutils postfix curl wget file tar bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux
+    apt install -y mailutils postfix curl wget file tar bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux
 }
 
 function yes_or_exit {
@@ -107,7 +107,7 @@ fi
 
 GAMESERVER="${GAME}server"
 
-[ -d "games/$GAME" ] || fail "This game is not supported!"
+[ -d "$SCRIPT_PATH/games/$GAME" ] || fail "This game is not supported!"
 
 echo "Installing $GAME to $GAMEDIR as user $GAMEUSER ..."
 
