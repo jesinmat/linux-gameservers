@@ -6,7 +6,7 @@ function fail {
 }
 
 function usage_format {
-    printf "     %s\n          %s\n" "$1" "$2"
+    printf "    %s\n        %s\n" "$1" "$2"
 }
 
 function usage {
@@ -30,6 +30,14 @@ function yes_or_exit {
         n|N ) fail "Installation cannot continue.";;
         * ) fail "Invalid choice.";;
     esac
+}
+
+function validate_user {
+    if ! getent passwd "$GAMEUSER" > /dev/null 2>&1; then
+        fail "This user does not exist."
+    elif [ id -u "$GAMEUSER" -eq 0 ]; then
+        fail "Root user cannot run game servers. Please select another user."
+    fi
 }
 
 function install_game_dependencies {
@@ -62,26 +70,26 @@ STEAM_ACCEPT_LICENSE="false"
 while [[ $# -gt 0 ]]; do
     case "$1" in
         -g|--game)
-        GAME="$2"
-        shift
-        shift
+            GAME="$2"
+            shift
+            shift
         ;;
         -u|--user)
-        GAMEUSER="$2"
-        shift
-        shift
+            GAMEUSER="$2"
+            shift
+            shift
         ;;
         -p|--path)
-        GAMEDIR="$2"
-        shift
-        shift
+            GAMEDIR="$2"
+            shift
+            shift
         ;;
         --steam-accept-eula)
-        STEAM_ACCEPT_LICENSE="true"
-        shift # past argument
+            STEAM_ACCEPT_LICENSE="true"
+            shift # past argument
         ;;
         *)    # unknown option
-        fail "Illegal argument: $1. Run script without arguments to see usage."
+            fail "Illegal argument: $1. Run script without arguments to see usage."
         ;;
     esac
 done
@@ -89,6 +97,8 @@ done
 [ -z "$GAME" ] && fail "No game selected!"
 [ -z "$GAMEUSER" ] && fail "No user selected!"
 [ -z "$GAMEDIR" ] && GAMEDIR="/home/$GAMEUSER"
+
+validate_user
 
 if [ ! -d "$GAMEDIR" ]; then
     mkdir -p "$GAMEDIR"
@@ -103,7 +113,6 @@ echo "Installing $GAME to $GAMEDIR as user $GAMEUSER ..."
 
 export GAMEUSER
 export GAMESERVER
-
 
 # Install common dependencies
 install_common_dependencies
