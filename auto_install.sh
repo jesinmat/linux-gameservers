@@ -42,7 +42,7 @@ function validate_user {
 
 function install_game_dependencies {
     local SCRIPT="$SCRIPT_PATH/games/$GAME/install_dependencies.sh"
-    if [ grep -qi "steamcmd" "$SCRIPT" -eq 0 ] && [ "$STEAM_ACCEPT_LICENSE" -ne "true" ]; then
+    if grep -qi "steamcmd" "$SCRIPT" && [ "$STEAM_ACCEPT_LICENSE" != "true" ]; then
         echo "This server requires Steam. You must accept Steam EULA to proceed."
         yes_or_exit "Do you accept Steam EULA? (y/n):"
     fi
