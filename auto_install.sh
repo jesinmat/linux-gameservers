@@ -35,7 +35,7 @@ function yes_or_exit {
 function validate_user {
     if ! getent passwd "$GAMEUSER" > /dev/null 2>&1; then
         fail "This user does not exist."
-    elif [ id -u "$GAMEUSER" -eq 0 ]; then
+    elif [ $(id -u "$GAMEUSER") -eq 0 ]; then
         fail "Root user cannot run game servers. Please select another user."
     fi
 }
