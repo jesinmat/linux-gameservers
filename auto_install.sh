@@ -26,7 +26,7 @@ function install_common_dependencies {
 function yes_or_exit {
     read -p "$1" CHOICE
     case "$CHOICE" in
-        y|Y ) break;;
+        y|Y ) return;;
         n|N ) fail "Installation cannot continue.";;
         * ) fail "Invalid choice.";;
     esac
@@ -43,8 +43,9 @@ function validate_user {
 function install_game_dependencies {
     local SCRIPT="$SCRIPT_PATH/games/$GAME/install_dependencies.sh"
     if grep -qi "steamcmd" "$SCRIPT" && [ "$STEAM_ACCEPT_LICENSE" != "true" ]; then
+        echo "-------------------------------------------------------------------"
         echo "This server requires Steam. You must accept Steam EULA to proceed."
-        yes_or_exit "Do you accept Steam EULA? (y/n):"
+        yes_or_exit "Do you accept Steam EULA? (y/n): "
     fi
     run_game_script "install_dependencies.sh"
 }
