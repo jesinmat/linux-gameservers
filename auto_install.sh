@@ -53,7 +53,7 @@ function run_game_script {
     local SCRIPT="$SCRIPT_PATH/games/$GAME/$1"
     if [ -f "$SCRIPT" ] ; then
         chmod +x "$SCRIPT"
-        bash "$SCRIPT"
+        . "$SCRIPT"
     fi
 }
 
@@ -110,9 +110,6 @@ GAMESERVER="${GAME}server"
 [ -d "$SCRIPT_PATH/games/$GAME" ] || fail "This game is not supported!"
 
 echo "Installing $GAME to $GAMEDIR as user $GAMEUSER ..."
-
-export GAMEUSER
-export GAMESERVER
 
 # Install common dependencies
 install_common_dependencies
