@@ -127,7 +127,7 @@ runuser -l "$GAMEUSER" -c "chmod +x \"$LGSM_PATH\""
 runuser -l "$GAMEUSER" -c "cd \"$GAMEDIR\"; bash linuxgsm.sh \"$GAMESERVER\""
 
 # Install game server
-runuser -l "$GAMEUSER" -c 'cd \"$GAMEDIR\"; ./'"$GAMESERVER"' auto-install'
+runuser -l "$GAMEUSER" -c "cd \"$GAMEDIR\"; ./\"$GAMESERVER\" auto-install"
 
 # Apply default config, if needed
 run_game_script "initial_config.sh"
