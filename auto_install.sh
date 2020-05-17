@@ -14,7 +14,7 @@ function usage {
     echo "Example: $0 -g mc -u john -p /home/john/gameserver"
     usage_format "-g, --game" "Select game to install. Argument must be one of the games located in ./games/ directory."
     usage_format "-u, --username" "Install game as selected user. User will be granted ownership of all game files. Root user not allowed."
-    usage_format "-p, --install_path" "Installation path for server. Directory will be created if it doesn't exist. Default: /home/(username)/"
+    usage_format "-p, --path" "Installation path for server. Directory will be created if it doesn't exist. Default: /home/(username)/gameserver"
 }
 
 function install_common_dependencies {
@@ -72,7 +72,7 @@ done
 
 [ -z "$GAME" ] && fail "No game selected!"
 [ -z "$GAMEUSER" ] && fail "No user selected!"
-[ -z "$GAMEDIR" ] && GAMEDIR="/home/$GAMEUSER"
+[ -z "$GAMEDIR" ] && GAMEDIR="/home/$GAMEUSER/gameserver"
 
 validate_user
 
