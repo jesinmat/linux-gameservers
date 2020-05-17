@@ -5,63 +5,131 @@ function fail {
     exit 1
 }
 
-if [ "$#" -lt 1 ]; then
-    fail "Usage: $0 game_code"
-fi
-
-GAME="$1"
-GAMEUSER="gameuser"
-GAMESERVER="${GAME}server"
-export GAMEUSER
-export GAMESERVER
-
-function run_game_script {
-    local SCRIPT="games/$GAME/$1"
-    if [ -f "$SCRIPT" ] ; then
-        chmod +x "$SCRIPT"
-        bash "$SCRIPT"
-    fi
+function usage_format {
+    printf "    %s\n        %s\n" "$1" "$2"
 }
 
-function set_steam_credentials {
-    echo "Setting Steam credentials"
-    # TODO Set steam credentials
-}
-
-function install_gamedig {
-    if ! dpkg -s nodejs > /dev/null 2>&1; then
-        curl -sL https://deb.nodesource.com/setup_14.x | bash -
-        apt install -y nodejs
-    fi
-    npm install gamedig -g
+function usage {
+    echo "Usage: $0 -g game_code -u username [ -p install_path ] [ --steam-accept-eula ]"
+    echo "Example: $0 -g mc -u john -p /home/john/gameserver"
+    usage_format "-g, --game" "Select game to install. Argument must be one of the games located in ./games/ directory."
+    usage_format "-u, --username" "Install game as selected user. User will be granted ownership of all game files. Root user not allowed."
+    usage_format "-p, --install_path" "Installation path for server. Directory will be created if it doesn't exist. Default: /home/(username)/"
+    usage_format "--steam-accept-eula" "Automatically accept Steam EULA for servers that require Steam."
 }
 
 function install_common_dependencies {
     apt update
-    apt install mailutils postfix curl wget file tar bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux
+    apt install -y mailutils postfix curl wget file tar bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux
 }
 
-[ -d "games/$GAME" ] || fail "This game is not supported!"
+function yes_or_exit {
+    read -p "$1" CHOICE
+    case "$CHOICE" in
+        y|Y ) return;;
+        n|N ) fail "Installation cannot continue.";;
+        * ) fail "Invalid choice.";;
+    esac
+}
+
+function validate_user {
+    if ! getent passwd "$GAMEUSER" > /dev/null 2>&1; then
+        fail "This user does not exist."
+    elif [ $(id -u "$GAMEUSER") -eq 0 ]; then
+        fail "Root user cannot run game servers. Please select another user."
+    fi
+}
+
+function install_game_dependencies {
+    local SCRIPT="$SCRIPT_PATH/games/$GAME/install_dependencies.sh"
+    if grep -qi "steamcmd" "$SCRIPT" && [ "$STEAM_ACCEPT_LICENSE" != "true" ]; then
+        echo "-------------------------------------------------------------------"
+        echo "This server requires Steam. You must accept Steam EULA to proceed."
+        yes_or_exit "Do you accept Steam EULA? (y/n): "
+    fi
+    run_game_script "install_dependencies.sh"
+}
+
+function run_game_script {
+    local SCRIPT="$SCRIPT_PATH/games/$GAME/$1"
+    if [ -f "$SCRIPT" ] ; then
+        chmod +x "$SCRIPT"
+        . "$SCRIPT"
+    fi
+}
+
+if [ "$#" -lt 1 ]; then
+    usage
+    exit 1
+fi
+
+SCRIPT_PATH=$(dirname $(realpath "$0"))
+GAME=
+GAMEUSER=
+STEAM_ACCEPT_LICENSE="false"
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -g|--game)
+            GAME="$2"
+            shift
+            shift
+        ;;
+        -u|--user)
+            GAMEUSER="$2"
+            shift
+            shift
+        ;;
+        -p|--path)
+            GAMEDIR="$2"
+            shift
+            shift
+        ;;
+        --steam-accept-eula)
+            STEAM_ACCEPT_LICENSE="true"
+            shift # past argument
+        ;;
+        *)    # unknown option
+            fail "Illegal argument: $1. Run script without arguments to see usage."
+        ;;
+    esac
+done
+
+[ -z "$GAME" ] && fail "No game selected!"
+[ -z "$GAMEUSER" ] && fail "No user selected!"
+[ -z "$GAMEDIR" ] && GAMEDIR="/home/$GAMEUSER"
+
+validate_user
+
+if [ ! -d "$GAMEDIR" ]; then
+    mkdir -p "$GAMEDIR"
+    chown $GAMEUSER: "$GAMEDIR"
+fi
+
+GAMESERVER="${GAME}server"
+
+[ -d "$SCRIPT_PATH/games/$GAME" ] || fail "This game is not supported!"
+
+echo "Installing $GAME to $GAMEDIR as user $GAMEUSER ..."
 
 # Install common dependencies
+export DEBIAN_FRONTEND=noninteractive
 install_common_dependencies
 
 # Install game dependencies
-run_game_script "install_dependencies.sh"
+# install_game_dependencies
 
 # Download LinuxGSM and game server files
-runuser -l "$GAMEUSER" -c 'wget -O linuxgsm.sh https://linuxgsm.sh'
-runuser -l "$GAMEUSER" -c 'chmod +x linuxgsm.sh'
-runuser -l "$GAMEUSER" -c 'bash linuxgsm.sh '"$GAMESERVER"''
+LGSM_PATH="$GAMEDIR/linuxgsm.sh"
+runuser -l "$GAMEUSER" -c "wget -O \"$LGSM_PATH\" https://linuxgsm.sh"
+runuser -l "$GAMEUSER" -c "chmod +x \"$LGSM_PATH\""
+runuser -l "$GAMEUSER" -c "cd \"$GAMEDIR\"; bash linuxgsm.sh \"$GAMESERVER\""
 
-[ -n "$STEAM_ACC_REQUIRED" ] && set_steam_credentials
+# Install game dependencies as root
+bash "$GAMEDIR/$GAMESERVER" auto-install
 
 # Install game server
-runuser -l "$GAMEUSER" -c './'"$GAMESERVER"' auto-install'
+runuser -l "$GAMEUSER" -c "cd \"$GAMEDIR\"; ./\"$GAMESERVER\" auto-install"
 
 # Apply default config, if needed
 run_game_script "initial_config.sh"
-
-# Install Gamedig for supported games
-. "games/$GAME/game_properties.sh"
-[ -n "$GAMEDIG_TYPE" ] && install_gamedig
