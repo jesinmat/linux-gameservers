@@ -113,16 +113,20 @@ GAMESERVER="${GAME}server"
 echo "Installing $GAME to $GAMEDIR as user $GAMEUSER ..."
 
 # Install common dependencies
+export DEBIAN_FRONTEND=noninteractive
 install_common_dependencies
 
 # Install game dependencies
-install_game_dependencies
+# install_game_dependencies
 
 # Download LinuxGSM and game server files
 LGSM_PATH="$GAMEDIR/linuxgsm.sh"
 runuser -l "$GAMEUSER" -c "wget -O \"$LGSM_PATH\" https://linuxgsm.sh"
 runuser -l "$GAMEUSER" -c "chmod +x \"$LGSM_PATH\""
 runuser -l "$GAMEUSER" -c "cd \"$GAMEDIR\"; bash linuxgsm.sh \"$GAMESERVER\""
+
+# Install game dependencies as root
+bash "$GAMEDIR/$GAMESERVER auto-install"
 
 # Install game server
 runuser -l "$GAMEUSER" -c "cd \"$GAMEDIR\"; ./\"$GAMESERVER\" auto-install"
