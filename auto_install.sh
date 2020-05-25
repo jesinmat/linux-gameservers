@@ -17,6 +17,18 @@ function usage {
     usage_format "-p, --path" "Installation path for server. Directory will be created if it doesn't exist. Default: /home/(username)/gameserver"
 }
 
+function list_games {
+    printf "| %-10s | %-50s |\n" "Code" "Name"
+    printf "%s\n" "-------------------------------------------------------------------"
+    for DIR in games/*; do
+        if [ -d "$DIR" ]; then
+            . "$DIR/game_properties.sh"   # your processing here
+            printf "| %-10s | %-50s |\n" "$GAME" "$GAME_LONG_NAME"
+        fi
+    done
+    printf "%s\n" "-------------------------------------------------------------------"
+}
+
 function install_common_dependencies {
     # Add support for 32bit apps
     dpkg --add-architecture i386
@@ -40,6 +52,10 @@ function run_game_script {
     fi
 }
 
+function run_as_user {
+    runuser -l "$GAMEUSER" -c "$1"
+}
+
 if [ "$#" -lt 1 ]; then
     usage
     exit 1
@@ -51,6 +67,10 @@ GAMEUSER=
 
 while [[ $# -gt 0 ]]; do
     case "$1" in
+        -l|--list)
+            list_games
+            exit 0
+        ;;
         -g|--game)
             GAME="$2"
             shift
@@ -95,15 +115,18 @@ install_common_dependencies
 
 # Download LinuxGSM and game server files
 LGSM_PATH="$GAMEDIR/linuxgsm.sh"
-runuser -l "$GAMEUSER" -c "wget -O \"$LGSM_PATH\" https://linuxgsm.sh"
-runuser -l "$GAMEUSER" -c "chmod +x \"$LGSM_PATH\""
-runuser -l "$GAMEUSER" -c "cd \"$GAMEDIR\"; bash linuxgsm.sh \"$GAMESERVER\""
+run_as_user "wget -O \"$LGSM_PATH\" https://linuxgsm.sh"
+run_as_user "chmod +x \"$LGSM_PATH\""
+run_as_user "cd \"$GAMEDIR\"; bash linuxgsm.sh \"$GAMESERVER\""
+
+# Run pre-install script
+run_game_script "pre_install.sh"
 
 # Install game dependencies
 bash "$GAMEDIR/$GAMESERVER" auto-install
 
 # Install game server
-runuser -l "$GAMEUSER" -c "cd \"$GAMEDIR\"; ./\"$GAMESERVER\" auto-install"
+run_as_user "cd \"$GAMEDIR\"; ./\"$GAMESERVER\" auto-install"
 
 # Apply default config, if needed
-run_game_script "initial_config.sh"
+run_game_script "post_install.sh"
