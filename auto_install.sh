@@ -130,3 +130,5 @@ run_as_user "cd \"$GAMEDIR\"; ./\"$GAMESERVER\" auto-install"
 
 # Apply default config, if needed
 run_game_script "post_install.sh"
+
+exit 0

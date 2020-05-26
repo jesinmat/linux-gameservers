@@ -9,7 +9,7 @@ auto_install.sh --list
 ```
 
 To install a game server, run
-```bash
+```console
 sudo auto_install.sh --game GAME --user USERNAME [--path /path/to/server/directory]
 ```
 
