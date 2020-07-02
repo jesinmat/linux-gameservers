@@ -22,7 +22,7 @@ function list_games {
     printf "%s\n" "-------------------------------------------------------------------"
     for DIR in games/*; do
         if [ -d "$DIR" ]; then
-            . "$DIR/game_properties.sh"   # your processing here
+            . "$DIR/game_properties.sh"
             printf "| %-10s | %-50s |\n" "$GAME" "$GAME_LONG_NAME"
         fi
     done
@@ -128,7 +128,7 @@ bash "$GAMEDIR/$GAMESERVER" auto-install
 # Install game server
 run_as_user "cd \"$GAMEDIR\"; ./\"$GAMESERVER\" auto-install"
 
-# Apply default config, if needed
+# Run post-install script
 run_game_script "post_install.sh"
 
 exit 0
