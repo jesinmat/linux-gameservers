@@ -1,2 +1,2 @@
-GAME="cs"
-GAME_LONG_NAME="Counter-Strike 1.6"
+GAME="css"
+GAME_LONG_NAME="Counter-Strike: Source"
