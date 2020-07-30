@@ -60,6 +60,7 @@ You can see all supported variables for each game in the [Supported games](#supp
 | GTA San Andreas Multiplayer | samp | GAME_RCON_PASS<br>GAME_SERVER_NAME | 7777 |
 | Minecraft | mc | GAME_ADMIN<br>GAME_SERVER_NAME | 25565 |
 | Quake III Arena | q3 | - | 27960
+| Unreal Tournament | ut | - | 7777-7788, 27900
 
 
 ## Contributing
