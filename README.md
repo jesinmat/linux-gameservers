@@ -58,7 +58,8 @@ You can see all supported variables for each game in the [Supported games](#supp
 | ---- | ---- | --------- | ------------ |
 | Counter Strike 1.6 | cs | - | 27015 |
 | GTA San Andreas Multiplayer | samp | GAME_RCON_PASS<br>GAME_SERVER_NAME | 7777 |
-| Minecraft | mc | GAME_ADMIN<br>GAME_SERVER_NAME | 25565 |
+| Minecraft Bedrock Edition | mcb | - | 19132 |
+| Minecraft Java Edition | mc | GAME_ADMIN<br>GAME_SERVER_NAME | 25565 |
 | Quake III Arena | q3 | - | 27960
 | Unreal Tournament | ut | - | 7777-7788, 27900
 
