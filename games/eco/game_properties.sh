@@ -1,0 +1,2 @@
+GAME="eco"
+GAME_LONG_NAME="Eco"

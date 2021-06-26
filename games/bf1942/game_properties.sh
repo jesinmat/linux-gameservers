@@ -1,0 +1,2 @@
+GAME="bf1942"
+GAME_LONG_NAME="Battlefield 1942"

@@ -1,0 +1,2 @@
+GAME="cc"
+GAME_LONG_NAME="Codename CURE"
