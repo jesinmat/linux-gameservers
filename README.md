@@ -56,13 +56,123 @@ You can see all supported variables for each game in the [Supported games](#supp
 
 | Game | Code | Supported variables | Default port |
 | ---- | ---- | --------- | ------------ |
-| Counter Strike 1.6 | cs | - | 27015 |
-| GTA San Andreas Multiplayer | samp | GAME_RCON_PASS<br>GAME_SERVER_NAME | 7777 |
+| Assetto Corsa | ac | - |
+| Action Half-Life | ahl | - |
+| Action: Source | ahl2 | - |
+| ARK: Survival Evolved | ark | - |
+| ARMA 3 | arma3 | - |
+| Avorion | av | - |
+| BrainBread | bb | - |
+| BrainBread 2 | bb2 | - |
+| Base Defense | bd | - |
+| Battlefield 1942 | bf1942 | - |
+| Battlefield: Vietnam | bfv | - |
+| Black Mesa: Deathmatch | bmdm | - |
+| Ballistic Overkill | bo | - |
+| Blade Symphony | bs | - |
+| Barotrauma | bt | - |
+| Battalion 1944 | bt1944 | - |
+| Codename CURE | cc | - |
+| Chivalry: Medieval Warfare | cmw | - |
+| Call of Duty | cod | - |
+| Call of Duty 2 | cod2 | - |
+| Call of Duty 4 | cod4 | - |
+| Call of Duty: United Offensive | coduo | - |
+| Call of Duty: World at War | codwaw | - |
+| Colony Survival | col | - |
+| Counter Strike 1.6 | cs | - | 27015 
+| Counter-Strike: Condition Zero | cscz | - |
+| Counter-Strike: Global Offensive | csgo | - |
+| Counter-Strike: Source | css | - |
+| Double Action: Boogaloo | dab | - |
+| Deathmatch Classic | dmc | - |
+| Day of Defeat | dod | - |
+| Day of Defeat: Source | dods | - |
+| Day of Infamy | doi | - |
+| Don't Starve Together | dst | - |
+| Dystopia | dys | - |
+| Eco | eco | - |
+| Empires Mod | em | - |
+| ET: Legacy | etl | - |
+| Factorio | fctr | - |
+| Fistful of Frags | fof | - |
+| Garrys Mod | gmod | - |
+| GTA San Andreas Multiplayer | samp | GAME_RCON_PASS<br>GAME_SERVER_NAME | 7777 
+| Half-Life 2: Deathmatch | hl2dm | - |
+| Half-Life: Deathmatch | hldm | - |
+| Half-Life Deathmatch: Source | hldms | - |
+| Hurtworld | hw | - |
+| Insurgency | ins | - |
+| Insurgency: Sandstorm | inss | - |
+| IOSoccer | ios | - |
+| Just Cause 2 | jc2 | - |
+| Just Cause 3 | jc3 | - |
+| Jedi Knight II: Jedi Outcast | jk2 | - |
+| Killing Floor | kf | - |
+| Killing Floor 2 | kf2 | - |
+| Left 4 Dead | l4d | - |
+| Left 4 Dead 2 | l4d2 | - |
+| Minecraft Java Edition | mc | GAME_ADMIN<br>GAME_SERVER_NAME | 25565 
 | Minecraft Bedrock Edition | mcb | - | 19132 |
-| Minecraft Java Edition | mc | GAME_ADMIN<br>GAME_SERVER_NAME | 25565 |
+| MORDHAU | mh | - |
+| Medal of Honor: Allied Assault | mohaa | - |
+| Memories of Mars | mom | - |
+| Multi Theft Auto | mta | - |
+| Mumble | mumble | - |
+| Nuclear Dawn | nd | - |
+| No More Room in Hell | nmrih | - |
+| Natural Selection | ns | - |
+| Natural Selection 2 | ns2 | - |
+| NS2: Combat | ns2c | - |
+| Onset | onset | - |
+| Opposing Force | opfor | - |
+| Project Cars | pc | - |
+| PaperMC | pmc | - |
+| Post Scriptum: The Bloody Seventh | pstbs | - |
+| Pirates Vikings & Knights II | pvkii | - |
+| Pavlov VR | pvr | - |
+| Project Zomboid | pz | - |
+| Quake 2 | q2 | - |
 | Quake III Arena | q3 | - | 27960
+| Quake Live | ql | - |
+| Quake World | qw | - |
+| Ricochet | ricochet | - |
+| Red Orchestra: Ostfront 41-45 | ro | - |
+| Return to Castle Wolfenstein | rtcw | - |
+| Rust | rust | - |
+| Rising World | rw | - |
+| Starbound | sb | - |
+| StickyBots | sbots | - |
+| SCP: Secret Laboratory | scpsl | - |
+| SCP: Secret Laboratory ServerMod | scpslsm | - |
+| 7 Days to Die | sdtd | - |
+| SourceForts Classic | sfc | - |
+| Soldier Of Fortune 2: Gold Edition | sof2 | - |
+| Soldat | sol | - |
+| Squad | squad | - |
+| Stationeers | st | - |
+| Sven Co-op | sven | - |
+| Terraria | terraria | - |
+| Team Fortress 2 | tf2 | - |
+| Team Fortress Classic | tfc | - |
+| The Specialists | ts | - |
+| Teamspeak 3 | ts3 | - |
+| Tower Unite | tu | - |
+| Teeworlds | tw | - |
+| Unturned | unt | - |
 | Unreal Tournament | ut | - | 7777-7788, 27900
-
+| Unreal Tournament 2004 | ut2k4 | - |
+| Unreal Tournament 3 | ut3 | - |
+| Unreal Tournament 99 | ut99 | - |
+| Valheim | vh | - |
+| Vampire Slayer | vs | - |
+| Vintage Story | vints | - |
+| Wolfenstein: Enemy Territory | wet | - |
+| Warfork | wf | - |
+| WaterfallMC | wmc | - |
+| Wurm Unlimited | wurm | - |
+| Zombie Master: Reborn | zmr | - |
+| Zombie Panic! Source | zps | - |
 
 ## Contributing
 
