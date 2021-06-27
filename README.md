@@ -91,7 +91,7 @@ You can see all supported variables for each game in the [Supported games](#supp
 | Day of Infamy | doi | - |
 | Don't Starve Together | dst | - |
 | Dystopia | dys | - |
-| Eco | eco | - |
+| Eco | eco | - | 3000, 3001
 | Empires Mod | em | - |
 | ET: Legacy | etl | - |
 | Factorio | fctr | - |
@@ -113,7 +113,7 @@ You can see all supported variables for each game in the [Supported games](#supp
 | Left 4 Dead | l4d | - |
 | Left 4 Dead 2 | l4d2 | - |
 | Minecraft Java Edition | mc | GAME_ADMIN<br>GAME_SERVER_NAME | 25565 
-| Minecraft Bedrock Edition | mcb | - | 19132 |
+| Minecraft Bedrock Edition | mcb | - | 19132 
 | MORDHAU | mh | - |
 | Medal of Honor: Allied Assault | mohaa | - |
 | Memories of Mars | mom | - |
