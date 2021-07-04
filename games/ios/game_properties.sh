@@ -1,0 +1,2 @@
+GAME="ios"
+GAME_LONG_NAME="IOSoccer"

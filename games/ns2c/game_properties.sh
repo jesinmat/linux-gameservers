@@ -1,0 +1,2 @@
+GAME="ns2c"
+GAME_LONG_NAME="NS2: Combat"

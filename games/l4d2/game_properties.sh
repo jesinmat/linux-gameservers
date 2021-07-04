@@ -1,0 +1,2 @@
+GAME="l4d2"
+GAME_LONG_NAME="Left 4 Dead 2"

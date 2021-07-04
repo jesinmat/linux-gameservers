@@ -1,0 +1,2 @@
+GAME="bt1944"
+GAME_LONG_NAME="Battalion 1944"
