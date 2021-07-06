@@ -91,7 +91,7 @@ You can see all supported variables for each game in the [Supported games](#supp
 | Day of Infamy | doi | - |
 | Don't Starve Together | dst | - |
 | Dystopia | dys | - |
-| Eco | eco | - | 3000, 3001
+| Eco | eco | GAME_SERVER_NAME<br>GAME_SERVER_PASS<br>GAME_SERVER_PUBLIC<br>GAME_SERVER_UPNP | 3000, 3001
 | Empires Mod | em | - |
 | ET: Legacy | etl | - |
 | Factorio | fctr | - |
