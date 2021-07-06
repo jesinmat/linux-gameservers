@@ -164,7 +164,7 @@ You can see all supported variables for each game in the [Supported games](#supp
 | Unreal Tournament 2004 | ut2k4 | - |
 | Unreal Tournament 3 | ut3 | - |
 | Unreal Tournament 99 | ut99 | - |
-| Valheim | vh | - |
+| Valheim | vh | GAME_SERVER_NAME<br>GAME_SERVER_PASS<br>GAME_SERVER_PUBLIC | 2456-2457
 | Vampire Slayer | vs | - |
 | Vintage Story | vints | - |
 | Wolfenstein: Enemy Territory | wet | - |
