@@ -14,7 +14,7 @@ if [ -z "$GAME_SERVER_PASS" ]; then
     read -p "Server password: " GAME_SERVER_PASS || GAME_SERVER_PASS=''
     echo
 fi
-run_as_user "sed -i 's/password=.*/Password=\"${GAME_SERVER_PASS}\"/' \"$CONFIG_PATH\""
+run_as_user "sed -i 's/password=.*/password=\"${GAME_SERVER_PASS}\"/' \"$CONFIG_PATH\""
 
 # Set server Public
 if [ -z "$GAME_SERVER_PUBLIC" ]; then
