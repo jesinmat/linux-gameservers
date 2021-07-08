@@ -149,7 +149,7 @@ You can see all supported variables for each game in the [Supported games](#supp
 | Soldier Of Fortune 2: Gold Edition | sof2 | - | 20100
 | SourceForts Classic | sfc | - | 27015, 27020
 | Squad | squad | - | 7787, 27165
-| Starbound | sb | - | 21025, 21025, 21026
+| Starbound | sb | GAME_SERVER_NAME<br>GAME_SERVER_PUBLIC<br>GAME_RCON_PASS<br>GAME_STEAM_USER<br>GAME_STEAM_PASS |  21025-21026
 | Stationeers | st | - | 27500, 27015
 | StickyBots | sbots | - | 7777, 27015
 | Sven Co-op | sven | - | 27015
