@@ -57,16 +57,16 @@ You can see all supported variables for each game in the [Supported games](#supp
 | Game | Code | Supported variables | Default port |
 | ---- | ---- | --------- | ------------ |
 | 7 Days to Die | sdtd | - |
-| ARK: Survival Evolved | ark | - | 7777, 7778, 27015, 27020
-| ARMA 3 | arma3 | - | 2302, 2303, 2304, 2305
+| ARK: Survival Evolved | ark | - | 7777-7778, 27015, 27020
+| ARMA 3 | arma3 | - | 2302-2305
 | Action Half-Life | ahl | - | 27015
 | Action: Source | ahl2 | - | 27015, 27020
 | Assetto Corsa | ac | - |
 | Avorion | av | - | 27000
 | Ballistic Overkill | bo | - |
-| Barotrauma | bt | - |
+| Barotrauma | bt | GAME_SERVER_NAME<br>GAME_SERVER_PASS<br>GAME_SERVER_PUBLIC<br>GAME_SERVER_UPNP | 27015-27016
 | Base Defense | bd | - | 27015
-| Battalion 1944 | bt1944 | - | 7777, 7778, 7779, 7780
+| Battalion 1944 | bt1944 | - | 7777-7780
 | Battlefield 1942 | bf1942 | - |
 | Battlefield: Vietnam | bfv | - |
 | Black Mesa: Deathmatch | bmdm | - | 27015, 27020
@@ -80,7 +80,7 @@ You can see all supported variables for each game in the [Supported games](#supp
 | Call of Duty: World at War | codwaw | - | 28960
 | Chivalry: Medieval Warfare | cmw | - | 7777, 7779, 27960
 | Codename CURE | cc | - | 27015, 27020
-| Colony Survival | col | - | 27004, 27005
+| Colony Survival | col | - | 27004-27005
 | Counter-Strike 1.6 | cs | - | 27015
 | Counter-Strike: Condition Zero | cscz | - | 27015
 | Counter-Strike: Global Offensive | csgo | - | 27015, 27020
@@ -93,9 +93,9 @@ You can see all supported variables for each game in the [Supported games](#supp
 | Double Action: Boogaloo | dab | - | 27015, 27020
 | Dystopia | dys | - | 27015, 27020
 | ET: Legacy | etl | - |
-| Eco | eco | GAME_SERVER_NAME<br>GAME_SERVER_PASS<br>GAME_SERVER_PUBLIC<br>GAME_SERVER_UPNP | 3000, 3001
+| Eco | eco | GAME_SERVER_NAME<br>GAME_SERVER_PASS<br>GAME_SERVER_PUBLIC<br>GAME_SERVER_UPNP | 3000-3001
 | Empires Mod | em | - | 27015, 27020
-| Factorio | fctr | - | 34197, 34198
+| Factorio | fctr | - | 34197-34198
 | Fistful of Frags | fof | - | 27015, 27020
 | GTA San Andreas Multiplayer | samp | GAME_RCON_PASS<br>GAME_SERVER_NAME | 7777 
 | Garrys Mod | gmod | - | 27015, 27020
@@ -127,7 +127,7 @@ You can see all supported variables for each game in the [Supported games](#supp
 | Nuclear Dawn | nd | - | 27015, 27020
 | Onset | onset | - |
 | Opposing Force | opfor | - | 27015
-| PaperMC | pmc | - | 25565, 25565, 25575
+| PaperMC | pmc | - | 25565, 25575
 | Pavlov VR | pvr | - | 7777, 8177
 | Pirates Vikings & Knights II | pvkii | - | 27015, 27020
 | Post Scriptum: The Bloody Seventh | pstbs | - | 10027, 10037
@@ -141,10 +141,9 @@ You can see all supported variables for each game in the [Supported games](#supp
 | Return to Castle Wolfenstein | rtcw | - | 27960
 | Ricochet | ricochet | - | 27015
 | Rising World | rw | - |
-| Rust | rust | - | 28015, 28016, 28082
+| Rust | rust | - | 28015-28016, 28082
 | SCP: Secret Laboratory ServerMod | scpslsm | - | 7777
 | SCP: Secret Laboratory | scpsl | - | 7777
-| San Andreas Multiplayer | samp | - | 7777
 | Soldat | sol | - |
 | Soldier Of Fortune 2: Gold Edition | sof2 | - | 20100
 | SourceForts Classic | sfc | - | 27015, 27020
@@ -159,12 +158,12 @@ You can see all supported variables for each game in the [Supported games](#supp
 | Teeworlds | tw | - | 8303
 | Terraria | terraria | - |
 | The Specialists | ts | - | 27015
-| Tower Unite | tu | - | 7777, 7778, 27015
+| Tower Unite | tu | - | 7777-7778, 27015
 | Unreal Tournament 2004 | ut2k4 | - |
 | Unreal Tournament 3 | ut3 | - | 7777, 6500
 | Unreal Tournament 99 | ut99 | - |
 | Unreal Tournament | ut | - | 7777-7788, 27900
-| Unturned | unt | - | 27015, 27016
+| Unturned | unt | - | 27015-27016
 | Valheim | vh | GAME_SERVER_NAME<br>GAME_SERVER_PASS<br>GAME_SERVER_PUBLIC | 2456-2457
 | Vampire Slayer | vs | - | 27015
 | Vintage Story | vints | - |
