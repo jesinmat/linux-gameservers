@@ -132,7 +132,7 @@ You can see all supported variables for each game in the [Supported games](#supp
 | Pirates Vikings & Knights II | pvkii | - | 27015, 27020
 | Post Scriptum: The Bloody Seventh | pstbs | - | 10027, 10037
 | Project Cars | pc | - |
-| Project Zomboid | pz | - |
+| Project Zomboid | pz | GAME_SERVER_NAME<br>GAME_SERVER_PASS<br>GAME_SERVER_PUBLIC<br>GAME_SERVER_UPNP<br>GAME_RCON_PASS | 16261
 | Quake 2 | q2 | - | 27910
 | Quake III Arena | q3 | - | 27960
 | Quake Live | ql | - |
