@@ -89,7 +89,7 @@ You can see all supported variables for each game in the [Supported games](#supp
 | Day of Defeat: Source | dods | - | 27015, 27020
 | Day of Infamy | doi | - | 27015, 27020
 | Deathmatch Classic | dmc | - | 27015
-| Don't Starve Together | dst | - |
+| Don't Starve Together | dst | GEN_SERVER_PORT<br>GEN_IS_MASTER<br>GEN_AUTHENTICATION_PORT<br>GEN_MASTER_SERVER_PORT | 10999, 10888, 8766, 27016
 | Double Action: Boogaloo | dab | - | 27015, 27020
 | Dystopia | dys | - | 27015, 27020
 | ET: Legacy | etl | - |
