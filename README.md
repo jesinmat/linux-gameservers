@@ -56,123 +56,123 @@ You can see all supported variables for each game in the [Supported games](#supp
 
 | Game | Code | Supported variables | Default port |
 | ---- | ---- | --------- | ------------ |
+| 7 Days to Die | sdtd | - |
+| ARK: Survival Evolved | ark | - | 7777-7778, 27015, 27020
+| ARMA 3 | arma3 | - | 2302-2305
+| Action Half-Life | ahl | - | 27015
+| Action: Source | ahl2 | - | 27015, 27020
 | Assetto Corsa | ac | - |
-| Action Half-Life | ahl | - |
-| Action: Source | ahl2 | - |
-| ARK: Survival Evolved | ark | - |
-| ARMA 3 | arma3 | - |
-| Avorion | av | - |
-| BrainBread | bb | - |
-| BrainBread 2 | bb2 | - |
-| Base Defense | bd | - |
+| Avorion | av | - | 27000
+| Ballistic Overkill | bo | - |
+| Barotrauma | bt | GAME_SERVER_NAME<br>GAME_SERVER_PASS<br>GAME_SERVER_PUBLIC<br>GAME_SERVER_UPNP | 27015-27016
+| Base Defense | bd | - | 27015
+| Battalion 1944 | bt1944 | - | 7777-7780
 | Battlefield 1942 | bf1942 | - |
 | Battlefield: Vietnam | bfv | - |
-| Black Mesa: Deathmatch | bmdm | - |
-| Ballistic Overkill | bo | - |
-| Blade Symphony | bs | - |
-| Barotrauma | bt | - |
-| Battalion 1944 | bt1944 | - |
-| Codename CURE | cc | - |
-| Chivalry: Medieval Warfare | cmw | - |
-| Call of Duty | cod | - |
-| Call of Duty 2 | cod2 | - |
-| Call of Duty 4 | cod4 | - |
-| Call of Duty: United Offensive | coduo | - |
-| Call of Duty: World at War | codwaw | - |
-| Colony Survival | col | - |
-| Counter Strike 1.6 | cs | - | 27015 
-| Counter-Strike: Condition Zero | cscz | - |
-| Counter-Strike: Global Offensive | csgo | - |
-| Counter-Strike: Source | css | - |
-| Double Action: Boogaloo | dab | - |
-| Deathmatch Classic | dmc | - |
-| Day of Defeat | dod | - |
-| Day of Defeat: Source | dods | - |
-| Day of Infamy | doi | - |
-| Don't Starve Together | dst | - |
-| Dystopia | dys | - |
-| Eco | eco | - | 3000, 3001
-| Empires Mod | em | - |
+| Black Mesa: Deathmatch | bmdm | - | 27015, 27020
+| Blade Symphony | bs | - | 27015, 27020
+| BrainBread 2 | bb2 | - | 27015, 27020
+| BrainBread | bb | - | 27015
+| Call of Duty 2 | cod2 | - | 28960
+| Call of Duty 4 | cod4 | - | 28960
+| Call of Duty | cod | - | 28960
+| Call of Duty: United Offensive | coduo | - | 28960
+| Call of Duty: World at War | codwaw | - | 28960
+| Chivalry: Medieval Warfare | cmw | - | 7777, 7779, 27960
+| Codename CURE | cc | - | 27015, 27020
+| Colony Survival | col | - | 27004-27005
+| Counter-Strike 1.6 | cs | - | 27015
+| Counter-Strike: Condition Zero | cscz | - | 27015
+| Counter-Strike: Global Offensive | csgo | - | 27015, 27020
+| Counter-Strike: Source | css | - | 27015, 27020
+| Day of Defeat | dod | - | 27015
+| Day of Defeat: Source | dods | - | 27015, 27020
+| Day of Infamy | doi | - | 27015, 27020
+| Deathmatch Classic | dmc | - | 27015
+| Don't Starve Together | dst | GEN_SERVER_PORT<br>GEN_IS_MASTER<br>GEN_AUTHENTICATION_PORT<br>GEN_MASTER_SERVER_PORT | 10999, 10888, 8766, 27016
+| Double Action: Boogaloo | dab | - | 27015, 27020
+| Dystopia | dys | - | 27015, 27020
 | ET: Legacy | etl | - |
-| Factorio | fctr | - |
-| Fistful of Frags | fof | - |
-| Garrys Mod | gmod | - |
+| Eco | eco | GAME_SERVER_NAME<br>GAME_SERVER_PASS<br>GAME_SERVER_PUBLIC<br>GAME_SERVER_UPNP | 3000-3001
+| Empires Mod | em | - | 27015, 27020
+| Factorio | fctr | - | 34197-34198
+| Fistful of Frags | fof | - | 27015, 27020
 | GTA San Andreas Multiplayer | samp | GAME_RCON_PASS<br>GAME_SERVER_NAME | 7777 
-| Half-Life 2: Deathmatch | hl2dm | - |
-| Half-Life: Deathmatch | hldm | - |
-| Half-Life Deathmatch: Source | hldms | - |
-| Hurtworld | hw | - |
-| Insurgency | ins | - |
-| Insurgency: Sandstorm | inss | - |
-| IOSoccer | ios | - |
+| Garrys Mod | gmod | - | 27015, 27020
+| Half-Life 2: Deathmatch | hl2dm | - | 27015, 27020
+| Half-Life Deathmatch: Source | hldms | - | 27015, 27020
+| Half-Life: Deathmatch | hldm | - | 27015
+| Hurtworld | hw | - | 12871, 12881
+| IOSoccer | ios | - | 27015, 27020
+| Insurgency | ins | - | 27015, 27020
+| Insurgency: Sandstorm | inss | - | 27102, 27131
+| Jedi Knight II: Jedi Outcast | jk2 | - | 27960
 | Just Cause 2 | jc2 | - |
 | Just Cause 3 | jc3 | - |
-| Jedi Knight II: Jedi Outcast | jk2 | - |
+| Killing Floor 2 | kf2 | - | 20560
 | Killing Floor | kf | - |
-| Killing Floor 2 | kf2 | - |
-| Left 4 Dead | l4d | - |
-| Left 4 Dead 2 | l4d2 | - |
-| Minecraft Java Edition | mc | GAME_ADMIN<br>GAME_SERVER_NAME | 25565 
+| Left 4 Dead 2 | l4d2 | - | 27015
+| Left 4 Dead | l4d | - | 27015
+| MORDHAU | mh | GEN_GSM_<br>GEN_ | 7777, 15000, 27015
+| Medal of Honor: Allied Assault | mohaa | - | 12203
+| Memories of Mars | mom | - | 7777, 15000
 | Minecraft Bedrock Edition | mcb | - | 19132 
-| MORDHAU | mh | - |
-| Medal of Honor: Allied Assault | mohaa | - |
-| Memories of Mars | mom | - |
+| Minecraft Java Edition | mc | GAME_ADMIN<br>GAME_SERVER_NAME | 25565 
 | Multi Theft Auto | mta | - |
-| Mumble | mumble | - |
-| Nuclear Dawn | nd | - |
-| No More Room in Hell | nmrih | - |
-| Natural Selection | ns | - |
-| Natural Selection 2 | ns2 | - |
-| NS2: Combat | ns2c | - |
+| Mumble | mumble | - | 64738, 64738
+| NS2: Combat | ns2c | - | 27015, 27016, 8080
+| Natural Selection 2 | ns2 | - | 27015, 27016, 8080
+| Natural Selection | ns | - | 27015
+| No More Room in Hell | nmrih | - | 27015, 27020
+| Nuclear Dawn | nd | - | 27015, 27020
 | Onset | onset | - |
-| Opposing Force | opfor | - |
+| Opposing Force | opfor | - | 27015
+| PaperMC | pmc | - | 25565, 25575
+| Pavlov VR | pvr | - | 7777, 8177
+| Pirates Vikings & Knights II | pvkii | - | 27015, 27020
+| Post Scriptum: The Bloody Seventh | pstbs | - | 10027, 10037
 | Project Cars | pc | - |
-| PaperMC | pmc | - |
-| Post Scriptum: The Bloody Seventh | pstbs | - |
-| Pirates Vikings & Knights II | pvkii | - |
-| Pavlov VR | pvr | - |
-| Project Zomboid | pz | - |
-| Quake 2 | q2 | - |
+| Project Zomboid | pz | GAME_SERVER_NAME<br>GAME_SERVER_PASS<br>GAME_SERVER_PUBLIC<br>GAME_SERVER_UPNP<br>GAME_RCON_PASS | 16261
+| Quake 2 | q2 | - | 27910
 | Quake III Arena | q3 | - | 27960
 | Quake Live | ql | - |
 | Quake World | qw | - |
-| Ricochet | ricochet | - |
 | Red Orchestra: Ostfront 41-45 | ro | - |
-| Return to Castle Wolfenstein | rtcw | - |
-| Rust | rust | - |
+| Return to Castle Wolfenstein | rtcw | - | 27960
+| Ricochet | ricochet | - | 27015
 | Rising World | rw | - |
-| Starbound | sb | - |
-| StickyBots | sbots | - |
-| SCP: Secret Laboratory | scpsl | - |
-| SCP: Secret Laboratory ServerMod | scpslsm | - |
-| 7 Days to Die | sdtd | - |
-| SourceForts Classic | sfc | - |
-| Soldier Of Fortune 2: Gold Edition | sof2 | - |
+| Rust | rust | - | 28015-28016, 28082
+| SCP: Secret Laboratory ServerMod | scpslsm | - | 7777
+| SCP: Secret Laboratory | scpsl | - | 7777
 | Soldat | sol | - |
-| Squad | squad | - |
-| Stationeers | st | - |
-| Sven Co-op | sven | - |
+| Soldier Of Fortune 2: Gold Edition | sof2 | - | 20100
+| SourceForts Classic | sfc | - | 27015, 27020
+| Squad | squad | - | 7787, 27165
+| Starbound | sb | GAME_SERVER_NAME<br>GAME_SERVER_PUBLIC<br>GAME_RCON_PASS<br>GAME_STEAM_USER<br>GAME_STEAM_PASS |  21025-21026
+| Stationeers | st | - | 27500, 27015
+| StickyBots | sbots | - | 7777, 27015
+| Sven Co-op | sven | - | 27015
+| Team Fortress 2 | tf2 | - | 27015, 27020
+| Team Fortress Classic | tfc | - | 27015
+| Teamspeak 3 | ts3 | - | 9987, 10011, 30033
+| Teeworlds | tw | - | 8303
 | Terraria | terraria | - |
-| Team Fortress 2 | tf2 | - |
-| Team Fortress Classic | tfc | - |
-| The Specialists | ts | - |
-| Teamspeak 3 | ts3 | - |
-| Tower Unite | tu | - |
-| Teeworlds | tw | - |
-| Unturned | unt | - |
-| Unreal Tournament | ut | - | 7777-7788, 27900
+| The Specialists | ts | - | 27015
+| Tower Unite | tu | - | 7777-7778, 27015
 | Unreal Tournament 2004 | ut2k4 | - |
-| Unreal Tournament 3 | ut3 | - |
+| Unreal Tournament 3 | ut3 | - | 7777, 6500
 | Unreal Tournament 99 | ut99 | - |
-| Valheim | vh | - |
-| Vampire Slayer | vs | - |
+| Unreal Tournament | ut | - | 7777-7788, 27900
+| Unturned | unt | - | 27015-27016
+| Valheim | vh | GAME_SERVER_NAME<br>GAME_SERVER_PASS<br>GAME_SERVER_PUBLIC | 2456-2457
+| Vampire Slayer | vs | - | 27015
 | Vintage Story | vints | - |
-| Wolfenstein: Enemy Territory | wet | - |
-| Warfork | wf | - |
+| Warfork | wf | - | 44400, 44444
 | WaterfallMC | wmc | - |
+| Wolfenstein: Enemy Territory | wet | - |
 | Wurm Unlimited | wurm | - |
-| Zombie Master: Reborn | zmr | - |
-| Zombie Panic! Source | zps | - |
+| Zombie Master: Reborn | zmr | - | 27015, 27020
+| Zombie Panic! Source | zps | - | 27015, 27020
 
 ## Contributing
 
