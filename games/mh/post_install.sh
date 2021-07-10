@@ -3,8 +3,8 @@
 #----------------TOOLS
 
 #overwrite shared varaiables for testing
-GAMEDIR="/home/gameuser/gameserver"
-GAME="mh"
+#GAMEDIR="/home/gameuser/gameserver"
+#GAME="mh"
 
 #gather config info from linuxgsm about this game
 GAME_DETAILS=$(sudo -u gameuser $GAMEDIR/${GAME}server details)
