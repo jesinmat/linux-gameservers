@@ -113,7 +113,7 @@ You can see all supported variables for each game in the [Supported games](#supp
 | Killing Floor | kf | - |
 | Left 4 Dead 2 | l4d2 | - | 27015
 | Left 4 Dead | l4d | - | 27015
-| MORDHAU | mh | - | 7777, 15000, 27015
+| MORDHAU | mh | GEN_SERVERNAME<br>GEN_SERVERPASSWORD<br>GEN_RCONPASSWORD<br>GEN_GSM_*<br>GEN_* | 7777, 15000, 27015
 | Medal of Honor: Allied Assault | mohaa | - | 12203
 | Memories of Mars | mom | - | 7777, 15000
 | Minecraft Bedrock Edition | mcb | - | 19132 
