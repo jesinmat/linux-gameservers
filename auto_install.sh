@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 function fail {
     printf '%s\n' "$1" >&2
