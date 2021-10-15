@@ -92,9 +92,9 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-[ -z "$GAME" ] && fail "No game selected!"
-[ -z "$GAMEUSER" ] && fail "No user selected!"
-[ -z "$GAMEDIR" ] && GAMEDIR="/home/$GAMEUSER/gameserver"
+[ -n "$GAME" ] || fail "No game selected!"
+[ -n "$GAMEUSER" ] || fail "No user selected!"
+[ -n "$GAMEDIR" ] || GAMEDIR="/home/$GAMEUSER/gameserver"
 
 validate_user
 
