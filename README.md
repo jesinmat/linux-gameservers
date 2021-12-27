@@ -141,6 +141,7 @@ You can see all supported variables for each game in the [Supported games](#supp
 | Return to Castle Wolfenstein | rtcw | - |
 | Rust | rust | - |
 | Rising World | rw | - |
+| Satisfactory | sf | - |
 | Starbound | sb | - |
 | StickyBots | sbots | - |
 | SCP: Secret Laboratory | scpsl | - |
