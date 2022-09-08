@@ -32,8 +32,8 @@ function list_games {
 function install_common_dependencies {
     # Add support for 32bit apps
     dpkg --add-architecture i386
-    apt update
-    apt install -y mailutils postfix curl wget file tar bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux
+    apt-get update
+    apt-get install -y mailutils postfix curl wget file tar bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux
 }
 
 function validate_user {
