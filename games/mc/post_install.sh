@@ -1,8 +1,7 @@
 #!/bin/bash
 
-# Get current IP and remove trailing space
-IP=$(hostname -I | xargs)
-run_as_user "sed -i 's/server-ip=/server-ip=$IP/' \"$GAMEDIR/serverfiles/server.properties\""
+# Set server to run on 0.0.0.0
+run_as_user "sed -i 's/server-ip=/server-ip=0.0.0.0/' \"$GAMEDIR/serverfiles/server.properties\""
 
 # Set server admin (OP)
 if [ -z "$GAME_ADMIN" ]; then
