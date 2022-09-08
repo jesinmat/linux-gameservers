@@ -168,6 +168,7 @@ You can see all supported variables for each game in the [Supported games](#supp
 | SCP: Secret Laboratory             | scpsl    | -                                  |
 | SCP: Secret Laboratory ServerMod   | scpslsm  | -                                  |
 | 7 Days to Die                      | sdtd     | -                                  |
+| Satisfactory                       | sf       | -                                  |
 | SourceForts Classic                | sfc      | -                                  |
 | Soldier Of Fortune 2: Gold Edition | sof2     | -                                  |
 | Soldat                             | sol      | -                                  |
