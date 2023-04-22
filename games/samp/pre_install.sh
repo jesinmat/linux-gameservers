@@ -1,3 +1,5 @@
 #!/bin/bash
 
-apt install -y lib32gcc1 libstdc++6 lib32stdc++6
+for i in lib32gcc1 lib32gcc-s1 lib32stdc++6 libstdc++6; do
+  apt install -y "$i"
+done
