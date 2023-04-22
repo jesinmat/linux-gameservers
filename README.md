@@ -222,7 +222,7 @@ In case the auto installer doesn't install all required dependencies, find the m
 ```shell
 #!/bin/bash
 # Example pre_install.sh script
-apt install -y lib32gcc1 python netcat
+apt install -y lib32gcc1 python3 netcat
 ```
 
 If you created a snapshot of your VM, restore it and try installing the server again with your new script.

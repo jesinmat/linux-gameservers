@@ -32,8 +32,8 @@ function list_games {
 function install_common_dependencies {
     # Add support for 32bit apps
     dpkg --add-architecture i386
-    apt-get update
-    apt-get install -y mailutils postfix curl wget file tar bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux
+    apt update
+    apt install -y mailutils postfix curl wget file tar bzip2 gzip unzip bsdmainutils python3 util-linux ca-certificates binutils bc jq tmux iproute2 netcat xz-utils
 }
 
 function validate_user {
@@ -123,7 +123,16 @@ run_as_user "cd \"$GAMEDIR\"; bash linuxgsm.sh \"$GAMESERVER\""
 run_game_script "pre_install.sh"
 
 # Install game dependencies
+# If this script it running in docker, we need to mask it for this command
+if [ -f /.dockerenv ]; then
+    mv /.dockerenv /.dockerenv.tmp
+fi
+
 bash "$GAMEDIR/$GAMESERVER" auto-install
+
+if [ -f /.dockerenv.tmp ]; then
+    mv /.dockerenv.tmp /.dockerenv
+fi
 
 # Install game server
 run_as_user "cd \"$GAMEDIR\"; ./\"$GAMESERVER\" auto-install"
