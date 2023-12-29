@@ -103,6 +103,7 @@ You can see all supported variables for each game in the [Supported games](#supp
 | Call of Duty: World at War         | codwaw   | -                                  |
 | Colony Survival                    | col      | -                                  |
 | Counter Strike 1.6                 | cs       | -                                  | 27015            |
+| Counter Strike 2                   | cs2      | -                                  |
 | Counter-Strike: Condition Zero     | cscz     | -                                  |
 | Counter-Strike: Global Offensive   | csgo     | -                                  |
 | Counter-Strike: Source             | css      | -                                  |
