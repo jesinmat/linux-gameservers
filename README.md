@@ -58,7 +58,7 @@ After installing a Counter Strike 1.6 (`cs`) server, you can start it with:
 john@ubuntu:~/games$ ./csserver start
 ```
 
-Server will start in a tmux terminal in the background. You can attach to it with `tmux attach -t csserver` and detach with `Ctrl + B`, `D`. Server logs are stored in the `logs` directory. Stop the server by running `./csserver stop`.
+Server will start in a tmux terminal in the background. You can attach to it with `./csserver console` and detach with `Ctrl + B`, `D`. Server logs are stored in the `logs` directory. Stop the server by running `./csserver stop`.
 
 Various other LinuxGSM commands are also available. You can see all options by running `./csserver` without any arguments.
 
@@ -103,6 +103,7 @@ You can see all supported variables for each game in the [Supported games](#supp
 | Call of Duty: World at War         | codwaw   | -                                  |
 | Colony Survival                    | col      | -                                  |
 | Counter Strike 1.6                 | cs       | -                                  | 27015            |
+| Counter Strike 2                   | cs2      | -                                  |
 | Counter-Strike: Condition Zero     | cscz     | -                                  |
 | Counter-Strike: Global Offensive   | csgo     | -                                  |
 | Counter-Strike: Source             | css      | -                                  |
