@@ -33,7 +33,7 @@ function install_common_dependencies {
     # Add support for 32bit apps
     dpkg --add-architecture i386
     apt update
-    apt install -y mailutils postfix curl wget file tar bzip2 gzip unzip bsdmainutils python3 util-linux ca-certificates binutils bc jq tmux iproute2 netcat xz-utils
+    apt install -y mailutils postfix curl wget file tar bzip2 gzip unzip bsdmainutils python3 util-linux ca-certificates binutils bc jq tmux iproute2 netcat-openbsd xz-utils distro-info libsdl2-2.0-0:i386 uuid-runtime
 }
 
 function validate_user {
