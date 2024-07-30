@@ -154,6 +154,7 @@ You can see all supported variables for each game in the [Supported games](#supp
 | Post Scriptum: The Bloody Seventh  | pstbs    | -                                  |
 | Pirates Vikings & Knights II       | pvkii    | -                                  |
 | Pavlov VR                          | pvr      | -                                  |
+| Palworld                           | pw       | -                                  | 8211             |
 | Project Zomboid                    | pz       | -                                  |
 | Quake 2                            | q2       | -                                  |
 | Quake III Arena                    | q3       | -                                  | 27960            |
