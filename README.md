@@ -143,6 +143,7 @@ You can see all supported variables for each game in the [Supported games](#supp
 | Multi Theft Auto                   | mta      | -                                  |
 | Mumble                             | mumble   | -                                  |
 | Nuclear Dawn                       | nd       | -                                  |
+| Necesse                            | nec      | -                                  | 14159            |
 | No More Room in Hell               | nmrih    | -                                  |
 | Natural Selection                  | ns       | -                                  |
 | Natural Selection 2                | ns2      | -                                  |
